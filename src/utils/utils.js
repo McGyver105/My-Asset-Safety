@@ -2,9 +2,9 @@ const { destinationLookup } = require('../db/rawSystems')
 
 // this function will read the rawSystem text file and give me an array of all systems
 
-const getAllSystems = (systemsObject) => {
+const getAllSystems = () => {
     const systemsArray = []
-    for (let pair in systemsObject) {
+    for (let pair in destinationLookup) {
         systemsArray.push(pair)
     }
     return systemsArray;
