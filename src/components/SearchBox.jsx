@@ -17,36 +17,43 @@ class SearchBox extends Component {
     }
 
     render () {
-        console.log('selected', this.state.selectedSystem)
         const { allSystems, userInput } = this.state;
         const searchRegex = new RegExp(`^${userInput}`, 'i');
-        const filteredArray = allSystems.filter((system) => {
+        const filteredArray = allSystems.filter((system, index) => {
             return searchRegex.test(system);
         })
         if (filteredArray.length === 0) filteredArray.push('system not found')
         if (allSystems.length === 0) return <p>Loading</p>;
-        else return (<>
-            <form
-                onSubmit={this.handleSubmit}
-            >
-                <label>Find destination from:
-                 <input list="systems"
-                        onChange={this.handleType}
-                        value={userInput}
-                    >
-                    </input>
-                    <datalist
-                        id="systems"
-                    >
-                        {filteredArray.map((system, index) => {
-                            return <option key={index} value={system}></option>;
-                        })}
-                    </datalist>
-                </label>
-                <button>Submit</button>
-            </form>
-            <Destination origin={this.state.selectedSystem} />
-        </>);
+        else return (
+            <main className="App__Main">
+                <form
+                    className="SearchBox__form"
+                    onSubmit={this.handleSubmit}
+                >
+                    <label className="form__label" >Assets currently in: 
+                        <input
+                            list="systems"
+                            onChange={this.handleType}
+                            value={userInput}
+                            className="form__textBox"
+                        >
+                        </input>
+                        <datalist
+                            id="systems"
+                        >
+                            {filteredArray.map((system, index) => {
+                                return <option key={index} value={system}></option>;
+                            })}
+                        </datalist>
+                    </label>
+                    <button
+                        className="form__button"
+                    >Warp!</button>
+                </form>
+                <section className="SearchBox__DestComponent">
+                    <Destination origin={this.state.selectedSystem} />
+                </section>
+            </main>);
     }
 
     handleType = (event) => {

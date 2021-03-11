@@ -2,5 +2,4 @@
   text-align: center;
   display: grid;
   grid-template-rows: 20vh 80vh;
-  grid-template-columns: 50% 50%;
 }
