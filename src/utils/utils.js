@@ -1,3 +1,5 @@
+const { destinationLookup } = require('../db/rawSystems')
+
 // this function will read the rawSystem text file and give me an array of all systems
 
 const getAllSystems = (systemsObject) => {
@@ -8,8 +10,10 @@ const getAllSystems = (systemsObject) => {
     return systemsArray;
 }
 
+// this function will read the rawSystem text file and return the destination system
 
-// this function will read the rawSystem text file and create a lookup object. ideally I'd like to write that lookup object into it's own file
+const getDestination = (origin) => {
+    return destinationLookup[origin];
+}
 
-
-module.exports = { getAllSystems };
+module.exports = { getAllSystems, getDestination };

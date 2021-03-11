@@ -1,4 +1,4 @@
-const { getAllSystems } = require("./utils")
+const { getAllSystems, getDestination } = require("./utils")
 const { destinationLookup } = require("../db/rawSystems")
 
 describe('getAllSystems', () => { 
@@ -53,9 +53,9 @@ describe('getAllSystems', () => {
                 '3-N3OO': 'Daras',
                 '3-TD6L': 'Daras'
             };
-            getAllSystems(input)
-            expect(input).toEqual(copyOfInput)
-        })
+            getAllSystems(input);
+            expect(input).toEqual(copyOfInput);
+        });
         it('returns an array with a different reference to the input', () => {
             const input = {
                 '0P9Z-I': 'Daras',
@@ -65,8 +65,8 @@ describe('getAllSystems', () => {
                 '3-N3OO': 'Daras',
                 '3-TD6L': 'Daras'
             };
-            expect(getAllSystems(input)).not.toBe(input)
-        })
+            expect(getAllSystems(input)).not.toBe(input);
+        });
         it('returns the same value everytime', () => {
             const input = {
                 '0P9Z-I': 'Daras',
@@ -106,6 +106,27 @@ describe('getAllSystems', () => {
                     '3-TD6L'
                 ]
             );
+        });
+    });
+});
+
+describe('getDestination', () => {
+    describe('Functionality', () => {
+        it('returns a string', () => {
+            const input = '3-N3OO';
+            expect(typeof getDestination(input)).toBe('string');
+        });
+        it('takes the lookup object and an origin system, and returns the destination system', () => {
+            const input = '3-N3OO';
+            expect(getDestination(input)).toBe('Daras')
+        })
+    });
+    describe('Mutation', () => {
+        it('returns the same value everytime', () => {
+            const input = '3-N3OO';
+            expect(getDestination(input)).toBe('Daras')
+            expect(getDestination(input)).toBe('Daras')
+            expect(getDestination(input)).toBe('Daras')
         })
     })
-});
+})
