@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/my-asset-safety/static/css/main.b8bf681b.chunk.css",
+    "main.js": "/my-asset-safety/static/js/main.d06a195d.chunk.js",
+    "main.js.map": "/my-asset-safety/static/js/main.d06a195d.chunk.js.map",
+    "runtime-main.js": "/my-asset-safety/static/js/runtime-main.47865c78.js",
+    "runtime-main.js.map": "/my-asset-safety/static/js/runtime-main.47865c78.js.map",
+    "static/js/2.fb63198b.chunk.js": "/my-asset-safety/static/js/2.fb63198b.chunk.js",
+    "static/js/2.fb63198b.chunk.js.map": "/my-asset-safety/static/js/2.fb63198b.chunk.js.map",
+    "index.html": "/my-asset-safety/index.html",
+    "static/css/main.b8bf681b.chunk.css.map": "/my-asset-safety/static/css/main.b8bf681b.chunk.css.map",
+    "static/js/2.fb63198b.chunk.js.LICENSE.txt": "/my-asset-safety/static/js/2.fb63198b.chunk.js.LICENSE.txt",
+    "static/media/components.css": "/my-asset-safety/static/media/Space_Banner.c6351c33.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.47865c78.js",
+    "static/js/2.fb63198b.chunk.js",
+    "static/css/main.b8bf681b.chunk.css",
+    "static/js/main.d06a195d.chunk.js"
+  ]
+}
