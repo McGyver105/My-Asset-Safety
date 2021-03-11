@@ -34,6 +34,7 @@ class SearchBox extends Component {
                         <input
                             list="systems"
                             onChange={this.handleType}
+                            onClick={this.handleClick}
                             value={userInput}
                             className="form__textBox"
                         >
@@ -58,7 +59,13 @@ class SearchBox extends Component {
 
     handleType = (event) => {
         this.setState(() => {
-            return { userInput: event.target.value };
+            return { userInput: event.target.value, selectedSystem: '' };
+        });
+    }
+
+    handleClick = () => {
+        this.setState(() => {
+            return { selectedSystem: '' };
         });
     }
 
