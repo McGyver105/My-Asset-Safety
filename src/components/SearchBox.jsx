@@ -27,28 +27,25 @@ class SearchBox extends Component {
         if (allSystems.length === 0) return <p>Loading</p>;
         else return (<>
             <form
-                onSubmit={(event) => {
-                    this.handleSubmit(event, filteredArray)
-                }}
+                onSubmit={this.handleSubmit}
             >
-                <label>
-                    Enter System:
-                    <input
-                        type="textbox"
+                <label>Find destination from:
+                 <input list="systems"
                         onChange={this.handleType}
-                        placeholder="start typing system"
                         value={userInput}
                     >
                     </input>
+                    <datalist
+                        id="systems"
+                    >
+                        {filteredArray.map((system, index) => {
+                            return <option key={index} value={system}></option>;
+                        })}
+                    </datalist>
                 </label>
-                <select
-                    onChange={this.handleDropDown}
-                >{filteredArray.map((system, index) => {
-                    return <option name={system} key={index}>{system}</option>;
-                })}</select>
-                <button>Find Destination from: </button>
+                <button>Submit</button>
             </form>
-            <Destination origin={this.state.selectedSystem}/>
+            <Destination origin={this.state.selectedSystem} />
         </>);
     }
 
@@ -58,16 +55,10 @@ class SearchBox extends Component {
         });
     }
 
-    handleDropDown = (event) => {
-        this.setState(() => {
-            return { selectedSystem: event.target.value };
-        });
-    }
-
-    handleSubmit = (event, filteredArray) => {
+    handleSubmit = (event) => {
         event.preventDefault();
-        this.setState((current) => {
-            return { userInput: '', selectedSystem: filteredArray[0] || current.selectedSystem };
+        this.setState(() => {
+            return { selectedSystem: event.target[0].value };
         });
     };
 }
