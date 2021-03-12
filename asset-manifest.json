@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/my-asset-safety/static/css/main.85124743.chunk.css",
-    "main.js": "/my-asset-safety/static/js/main.07f1bab7.chunk.js",
-    "main.js.map": "/my-asset-safety/static/js/main.07f1bab7.chunk.js.map",
+    "main.css": "/my-asset-safety/static/css/main.7b7a457a.chunk.css",
+    "main.js": "/my-asset-safety/static/js/main.705d04da.chunk.js",
+    "main.js.map": "/my-asset-safety/static/js/main.705d04da.chunk.js.map",
     "runtime-main.js": "/my-asset-safety/static/js/runtime-main.47865c78.js",
     "runtime-main.js.map": "/my-asset-safety/static/js/runtime-main.47865c78.js.map",
     "static/js/2.fb63198b.chunk.js": "/my-asset-safety/static/js/2.fb63198b.chunk.js",
     "static/js/2.fb63198b.chunk.js.map": "/my-asset-safety/static/js/2.fb63198b.chunk.js.map",
     "index.html": "/my-asset-safety/index.html",
-    "static/css/main.85124743.chunk.css.map": "/my-asset-safety/static/css/main.85124743.chunk.css.map",
+    "static/css/main.7b7a457a.chunk.css.map": "/my-asset-safety/static/css/main.7b7a457a.chunk.css.map",
     "static/js/2.fb63198b.chunk.js.LICENSE.txt": "/my-asset-safety/static/js/2.fb63198b.chunk.js.LICENSE.txt",
     "static/media/components.css": "/my-asset-safety/static/media/Space_Banner.c6351c33.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.47865c78.js",
     "static/js/2.fb63198b.chunk.js",
-    "static/css/main.85124743.chunk.css",
-    "static/js/main.07f1bab7.chunk.js"
+    "static/css/main.7b7a457a.chunk.css",
+    "static/js/main.705d04da.chunk.js"
   ]
 }
