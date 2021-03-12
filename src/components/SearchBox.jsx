@@ -19,10 +19,11 @@ class SearchBox extends Component {
     render () {
         const { allSystems, userInput } = this.state;
         const searchRegex = new RegExp(`^${userInput}`, 'i');
+        let noSystem = false;
         const filteredArray = allSystems.filter((system, index) => {
             return searchRegex.test(system);
         })
-        if (filteredArray.length === 0) filteredArray.push('system not found')
+        if (filteredArray.length === 0) noSystem = true;
         if (allSystems.length === 0) return <p>Loading</p>;
         else return (
             <main className="App__Main">
@@ -42,17 +43,19 @@ class SearchBox extends Component {
                         <datalist
                             id="systems"
                         >
-                            {userInput.length !== 0 ? filteredArray.map((system, index) => {
-                                return <option key={index} value={system}></option>;
-                            }) : <option key={1} value={""}></option>}
+                            {userInput.length !== 0 ?
+                                filteredArray.map((system, index) => {
+                                    return <option key={index} value={system}>{system}</option>;
+                                })
+                                : <option key={1} value={""}></option>}
                         </datalist>
                     </label>
                     <button
                         className="form__button"
-                    >Warp!</button>
+                    >Go!</button>
                 </form>
                 <section className="SearchBox__DestComponent">
-                    <Destination origin={this.state.selectedSystem} />
+                    <Destination origin={this.state.selectedSystem} invalidSys={noSystem}/>
                 </section>
             </main>);
     }
