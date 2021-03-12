@@ -42,9 +42,9 @@ class SearchBox extends Component {
                         <datalist
                             id="systems"
                         >
-                            {filteredArray.map((system, index) => {
+                            {userInput.length !== 0 ? filteredArray.map((system, index) => {
                                 return <option key={index} value={system}></option>;
-                            })}
+                            }) : <option key={1} value={""}></option>}
                         </datalist>
                     </label>
                     <button
