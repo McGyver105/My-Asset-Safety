@@ -38,6 +38,7 @@ class SearchBox extends Component {
                             onClick={this.handleClick}
                             value={userInput}
                             className="form__textBox"
+                            placeholder={"type null-sec system"}
                         >
                         </input>
                         <datalist
